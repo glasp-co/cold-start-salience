@@ -3,13 +3,12 @@
 Public reproducibility bundle for the paper. Self-contained and ready to push to a dedicated
 public repository.
 
-<!-- arXiv badge: fill in after posting -->
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX) -->
+[![arXiv](https://img.shields.io/badge/arXiv-2606.11654-b31b1b.svg)](https://arxiv.org/abs/2606.11654)
 
 This is the fourth paper in a program on social highlighting, after **Personal Salience**
 (`glasp-co/personal-salience`), **Selection, Not Salience** (`glasp-co/personal-selection`), and
-**Factions Within, Uncertain Across** (`glasp-co/clone-crowd`). Those study the *individual* or
-the *segmented* crowd; this paper predicts the *aggregate* crowd on documents that have no marks
+**Factions Within, Uncertain Across** (`glasp-co/clone-crowd`). Those study the _individual_ or
+the _segmented_ crowd; this paper predicts the _aggregate_ crowd on documents that have no marks
 yet (cold start).
 
 ## TL;DR
@@ -27,27 +26,27 @@ baseline), so we train. Findings:
 - Product-meaningful: **precision@3 rises 0.25 → 0.39**, and the model beats lead on **69%** of
   documents.
 - Not a temporal-generalization failure; no evidence of content-drift or near-duplicate leakage
-  (removing near-twins *raises* the edge).
+  (removing near-twins _raises_ the edge).
 - A standardized regression: the advantage is driven by **document popularity** (lower → larger)
   and **label reliability** (thicker crowd labels → larger measured edge). It nearly vanishes
   only on **currently-viral** content — and there it is the **lead baseline that rises**, not the
   model that fails.
 
-The honest scope: evaluation conditions on documents that *eventually* reached ≥20 highlighters,
+The honest scope: evaluation conditions on documents that _eventually_ reached ≥20 highlighters,
 so this is a retrospective cold-start simulation; within it, day-zero prediction is most feasible
 on low-popularity, long-tail documents and least useful on the viral front page that accrues
 human marks fastest anyway.
 
 ## Results at a glance (advantage over lead = AP(model) − AP(lead); 95% by-document bootstrap CI)
 
-| Result | Value |
-| --- | --- |
-| M3 − lead (headline) | +0.044 [+0.030, +0.058], clears δ in 97% of resamples |
-| embedding effect / augmentation effect | +0.014 [+0.010, +0.019] / +0.010 [+0.002, +0.018] |
-| unsupervised centroid / centrality − lead | −0.065 / −0.065 (both lose to lead) |
-| precision@3 (lead → M3) | 0.254 → 0.394 (+0.141 [+0.103, +0.180]) |
-| de-duplicated / temporal control | +0.053 [+0.035, +0.070] / Δ +0.001 [−0.008, +0.010] |
-| regression: popularity / label thickness | β −0.32 [−0.56, −0.14] / +0.22 [+0.07, +0.42] (others n.s.) |
+| Result                                    | Value                                                       |
+| ----------------------------------------- | ----------------------------------------------------------- |
+| M3 − lead (headline)                      | +0.044 [+0.030, +0.058], clears δ in 97% of resamples       |
+| embedding effect / augmentation effect    | +0.014 [+0.010, +0.019] / +0.010 [+0.002, +0.018]           |
+| unsupervised centroid / centrality − lead | −0.065 / −0.065 (both lose to lead)                         |
+| precision@3 (lead → M3)                   | 0.254 → 0.394 (+0.141 [+0.103, +0.180])                     |
+| de-duplicated / temporal control          | +0.053 [+0.035, +0.070] / Δ +0.001 [−0.008, +0.010]         |
+| regression: popularity / label thickness  | β −0.32 [−0.56, −0.14] / +0.22 [+0.07, +0.42] (others n.s.) |
 
 ## Contents
 
@@ -55,6 +54,8 @@ human marks fastest anyway.
 - `paper.pdf` — the compiled paper (10 pages, 3 figures, 4 tables).
 - `figures/` — three figures (PDF + PNG): the representation ladder, the per-cell model-vs-lead AP
   decomposition, and the replication + standardized-regression panel.
+- `make_figures.py` — regenerates the figures (numbers embedded; no private data needed).
+- `make-arxiv.sh` — assembles the arXiv source tarball.
 
 ## Reproducibility
 
@@ -72,7 +73,7 @@ aggregate statistics are available to researchers on reasonable request.
             Crowd Highlight Salience},
   author = {Nakayashiki, Kazuki and Watanabe, Keisuke},
   year   = {2026},
-  eprint = {XXXX.XXXXX},
+  eprint = {2606.11654},
   archivePrefix = {arXiv},
   primaryClass  = {cs.IR}
 }
